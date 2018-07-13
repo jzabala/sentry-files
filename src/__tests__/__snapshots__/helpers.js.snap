@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getFilesUrl returns sentry files url for params 1`] = `"/api/0/projects/testing-account/testing-project/releases/1.0.0/files/"`;
+
+exports[`getReleaseUrl returns sentry release url for params 1`] = `"/api/0/projects/testing-account/testing-project/releases/"`;
