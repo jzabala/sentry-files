@@ -73,11 +73,16 @@ function buildBodyForFiles(boundary, file) {
   const data = fs.readFileSync(file.path)
   return Buffer.concat([
     Buffer.from(
-      `${delimiter} ${crlf} Content-Disposition: form-data; name="file"; filename="${
+      `${delimiter}${crlf} Content-Disposition: form-data; name="file"; filename="${
         file.name
       }"${crlf}${crlf}`
     ),
     data,
+    Buffer.from(
+      `${crlf}${delimiter}${crlf} Content-Disposition: form-data; name="name"${crlf}${crlf}${
+        file.name
+      }`
+    ),
     Buffer.from(closeDelimiter)
   ])
 }
