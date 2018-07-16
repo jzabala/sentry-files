@@ -1,12 +1,12 @@
-function getReleaseUrl(account, project) {
-  if (!account) throw new Error('account param is required')
+function getReleaseUrl(organization, project) {
+  if (!organization) throw new Error('organization param is required')
   if (!project) throw new Error('project param is required')
-  return `/api/0/projects/${account}/${project}/releases/`
+  return `/api/0/projects/${organization}/${project}/releases/`
 }
 
-function getFilesUrl(account, project, version) {
+function getFilesUrl(organization, project, version) {
   if (!version) throw new Error('version param is required')
-  const releaseUrl = getReleaseUrl(account, project)
+  const releaseUrl = getReleaseUrl(organization, project)
   return `${releaseUrl}${version}/files/`
 }
 
