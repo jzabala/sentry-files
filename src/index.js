@@ -2,6 +2,7 @@ const service = require('./sentryService')
 
 function upload(config) {
   const { createRelease, uploadFile } = service(config)
+  console.log(`---- Begin files upload ----`)
   console.log(`Creating release ${config.version}...`)
   return createRelease().then(() =>
     Promise.all(
