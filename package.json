@@ -1,5 +1,5 @@
 {
-  "name": "sentry-sourcemaps",
+  "name": "sentry-files",
   "version": "1.0.0",
   "description": "Node library to upload sourcemaps files to Sentry",
   "main": "src/index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jzabala/sentry-sourcemaps.git"
+    "url": "git+https://github.com/jzabala/sentry-files.git"
   },
   "keywords": [
     "nodejs",
@@ -18,9 +18,9 @@
   "author": "Johnny Zabala <jzabala.s@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jzabala/sentry-sourcemaps/issues"
+    "url": "https://github.com/jzabala/sentry-files/issues"
   },
-  "homepage": "https://github.com/jzabala/sentry-sourcemaps#readme",
+  "homepage": "https://github.com/jzabala/sentry-files#readme",
   "devDependencies": {
     "eslint": "^5.0.1",
     "eslint-config-standard": "^11.0.0",

@@ -1,1 +1,1 @@
-# sentry-sourcemaps
+# sentry-files
