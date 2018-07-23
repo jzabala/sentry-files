@@ -1,6 +1,12 @@
 const service = require('./sentryService')
+const { validateConfig } = require('./validators')
 
 function upload(config) {
+  try {
+    validateConfig(config)
+  } catch (err) {
+    return Promise.reject(err)
+  }
   const { createRelease, uploadFile } = service(config)
   console.log(`---- Begin files upload ----`)
   console.log(`Creating release ${config.version}...`)

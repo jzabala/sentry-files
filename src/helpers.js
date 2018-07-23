@@ -10,7 +10,16 @@ function getFilesUrl(organization, project, version) {
   return `${releaseUrl}${version}/files/`
 }
 
+function isEmpty(value) {
+  if (!value) {
+    return true
+  } else {
+    return Array.isArray(value) && value.length === 0
+  }
+}
+
 module.exports = {
   getReleaseUrl,
-  getFilesUrl
+  getFilesUrl,
+  isEmpty
 }
