@@ -1,4 +1,4 @@
-const { getReleaseUrl, getFilesUrl } = require('../helpers')
+const { getReleaseUrl, getFilesUrl, isEmpty } = require('../helpers')
 
 describe('getReleaseUrl', () => {
   const organization = 'testing-organization'
@@ -41,5 +41,20 @@ describe('getFilesUrl', () => {
     expect(() => getFilesUrl(organization, project, null)).toThrow(
       'version param is required'
     )
+  })
+})
+
+describe('isEmpty', () => {
+  test('returns true for undefined', () => {
+    expect(isEmpty(undefined)).toBeTruthy()
+  })
+  test('returns true for null', () => {
+    expect(isEmpty(undefined)).toBeTruthy()
+  })
+  test('returns true for empty string', () => {
+    expect(isEmpty('')).toBeTruthy()
+  })
+  test('returns true for empty array', () => {
+    expect(isEmpty([])).toBeTruthy()
   })
 })
