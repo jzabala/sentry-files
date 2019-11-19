@@ -3,11 +3,11 @@ const { post } = require('./sentryClient')
 const ClientError = require('./clientError')
 
 function service(config) {
-  const { version, organization, project, token } = config
+  const { version, organization, project, token, hostname } = config
 
   function createRelease() {
     return new Promise((resolve, reject) => {
-      post(getReleaseUrl(organization, project))
+      post(hostname, getReleaseUrl(organization, project))
         .setToken(token)
         .setBody({ version })
         .end((error, response) => {
@@ -26,7 +26,7 @@ function service(config) {
   }
   function uploadFile(file) {
     return new Promise((resolve, reject) => {
-      post(getFilesUrl(organization, project, version))
+      post(hostname, getFilesUrl(organization, project, version))
         .setToken(token)
         .attachFile(file)
         .end((error, response) => {

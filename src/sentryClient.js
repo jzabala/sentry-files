@@ -2,12 +2,12 @@ const https = require('https')
 const fs = require('fs')
 const ClientError = require('./clientError')
 
-function post(path) {
+function post(hostname, path) {
   let headers = {
     Accept: 'application/json'
   }
   const options = {
-    hostname: 'sentry.io',
+    hostname: hostname || 'sentry.io',
     port: 443,
     path,
     method: 'POST'
